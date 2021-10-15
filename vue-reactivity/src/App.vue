@@ -2,6 +2,7 @@
   <div id="app">
     <h1>Pizza Builder</h1>
 
+
   </div>
 </template>
 
