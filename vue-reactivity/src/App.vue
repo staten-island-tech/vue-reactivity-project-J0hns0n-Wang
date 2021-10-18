@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>Pizza Builder</h1>
-    <h1>{{ pizza }}</h1>
+  <button class="ingredients" v-for="topping in toppings" :key="topping">{{topping}}</button>
 
   </div>
 </template>
@@ -13,7 +13,17 @@ export default {
   name: 'App',
   data(){
     return{
-      pizza:"onions"
+    toppings:["Pepperoni",
+"Mushroom",
+"ExtraCheese",
+"Sausage",
+"Onion",
+"BlackOlives",
+"GreenPepper",
+"FreshGarlic",
+"Tomato",
+"FreshBasil"],
+
     }
   },
   methods:{
@@ -32,4 +42,6 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+
 </style>
