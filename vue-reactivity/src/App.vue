@@ -1,7 +1,14 @@
 <template>
   <div id="app">
     <h1>Pizza Builder</h1>
-  <button class="ingredients" v-for="topping in toppings" :key="topping">{{topping}}</button>
+    <div id="pizza-main">
+         <img :src="image"> 
+      <div id="ingredients">
+           <button class="topping" v-for="topping in toppings" :key="topping">{{topping}}</button>
+      </div>
+
+    </div>
+ 
 
   </div>
 </template>
@@ -24,6 +31,7 @@ export default {
 "Tomato",
 "FreshBasil"],
 
+image:"test-pizza.png"
     }
   },
   methods:{
@@ -33,7 +41,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="css">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -41,6 +49,12 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+#ingredients{
+  display: flex;
+  width: 80vw;
+  justify-content: space-around;
 }
 
 
