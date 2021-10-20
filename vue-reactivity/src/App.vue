@@ -31,7 +31,7 @@ export default {
 "Tomato",
 "FreshBasil"],
 
-image:"test-pizza.png"
+image: require("./assets/logo.png")
     }
   },
   methods:{
