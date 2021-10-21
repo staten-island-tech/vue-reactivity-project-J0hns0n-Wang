@@ -4,6 +4,7 @@
     <div id="pizza-main">
       <div id="img-container">
         <img class="crust-img" src="./assets/test-pizza-removebg-preview.png">
+        <img class="topping-img" src="./assets/onions.png">
            <!-- <img :src="image">  -->
       </div>
       <div id="ingredients">
@@ -66,6 +67,19 @@ export default {
 .topping{
   height: 2rem;
   cursor: pointer;
+}
+
+.crust-img{
+  position: absolute;
+  height: 20rem;
+  top: 0;
+  left: 0;
+}
+.topping-img{
+  position: absolute;
+  height: 20rem;
+  top: 0;
+  left: 0;
 }
 
 
