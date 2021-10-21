@@ -3,7 +3,8 @@
     <h1>Pizza Builder</h1>
     <div id="pizza-main">
       <div id="img-container">
-           <img :src="image"> 
+        <img class="crust-img" src="./assets/test-pizza-removebg-preview.png">
+           <!-- <img :src="image">  -->
       </div>
       <div id="ingredients">
            <button class="topping" v-for="topping in toppings" :key="topping">{{topping}}</button>
@@ -23,18 +24,14 @@ export default {
   data(){
     return{
     toppings:[
-"Pepperoni",
-"Mushroom",
-"Cheese",
-"Sausage",
-"Onion",
-"BlackOlives",
-"GreenPepper",
-"FreshGarlic",
-"Tomato",
-"FreshBasil"],
+      "Green Peppers",
+      "Mushrooms",
+      "Onions",
+      "Pepperoni",
+      "Ranch"
+    ],
 
-image: require("./assets/pepperoni-removebg-preview.png")
+
     }
   },
   methods:{
@@ -51,14 +48,24 @@ image: require("./assets/pepperoni-removebg-preview.png")
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
+#img-container{
+  width: 50%;
+}
+#pizza-main{
+  display: flex;
+  flex-direction: row;
 
-
+}
 #ingredients{
   display: flex;
-  width: 80vw;
+  /* width: 80vw; */
   justify-content: space-around;
+}
+
+.topping{
+  height: 2rem;
+  cursor: pointer;
 }
 
 
