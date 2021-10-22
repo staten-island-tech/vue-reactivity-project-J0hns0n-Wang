@@ -4,11 +4,11 @@
     <div id="pizza-main">
       <div id="img-container">
         <img class="crust-img" src="./assets/test-pizza-removebg-preview.png">
-        <img class="topping-img" src="./assets/onions.png">
+        <img class="topping-img" v-for="(topping, index) in toppings" :key="topping.id" @click="addTopping(index)">
            <!-- <img :src="image">  -->
       </div>
       <div id="ingredients">
-           <button class="topping" v-for="topping in toppings" :key="topping">{{topping}}</button>
+           <button class="topping" v-for="topping in toppings" :key="topping">{{topping.topping}}</button>
       </div>
 
     </div>
@@ -24,19 +24,43 @@ export default {
   name: 'App',
   data(){
     return{
+      chosenTopping:[],
     toppings:[
-      "Green Peppers",
-      "Mushrooms",
-      "Onions",
-      "Pepperoni",
-      "Ranch"
+      {
+        id: 7000,
+        topping:"Green Peppers",
+        image:require("./assets/green-peppers.png")
+      },
+       {
+        id: 7001,
+        topping:"Mushrooms",
+        image:require("./assets/mushrooms.png")
+      },
+       {
+        id: 7002,
+        topping:"Onions",
+        image:require("./assets/onions.png")
+      },
+       {
+        id: 7003,
+        topping:"Pepperoni",
+        image:require("./assets/pepperoni1.png")
+      }, {
+        id: 7004,
+        topping:"Ranch",
+        image:require("./assets/ranch.png")
+      }
     ],
+    selectedTopping: 0,
 
 
     }
   },
   methods:{
-
+    addTopping: function(index){
+      this.selectedTopping = index
+      // console.log(index)
+    }
   }
   
 }
