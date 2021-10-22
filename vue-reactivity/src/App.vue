@@ -4,11 +4,11 @@
     <div id="pizza-main">
       <div id="img-container">
         <img class="crust-img" src="./assets/test-pizza-removebg-preview.png">
-        <img class="topping-img" v-for="(topping, index) in toppings" :key="topping.id" @click="addTopping(index)">
+        <img class="topping-img" v-for="topping in chosenTopping" :key="topping.id" :src="topping.image" >
            <!-- <img :src="image">  -->
       </div>
       <div id="ingredients">
-           <button class="topping" v-for="topping in toppings" :key="topping">{{topping.topping}}</button>
+           <button class="topping" v-for="(topping, index) in toppings" :key="topping.id"  @click="updateTopping(index)">{{topping.topping}}</button>
       </div>
 
     </div>
@@ -57,10 +57,15 @@ export default {
     }
   },
   methods:{
-    addTopping: function(index){
+    updateTopping(index){
       this.selectedTopping = index
-      // console.log(index)
+      console.log(index)
+      this.chosenTopping.push(this.toppings[index])
+      console.log(this.chosenTopping)
     }
+  },
+  computed:{
+
   }
   
 }
