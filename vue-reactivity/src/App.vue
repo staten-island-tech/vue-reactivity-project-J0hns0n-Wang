@@ -1,14 +1,14 @@
 <template>
   <div id="app">
-    <h1>Pizza Builder</h1>
+    <h1>Vegan Pizza Builder</h1>
     <div id="pizza-main">
       <div id="img-container">
-        <img class="crust-img" src="./assets/test-pizza-removebg-preview.png">
+        <img class="crust-img" src="./assets/crust.png">
         <img class="topping-img" v-for="topping in chosenTopping" :key="topping.id" :src="topping.image" >
            <!-- <img :src="image">  -->
       </div>
       <div id="ingredients">
-           <button class="topping" v-for="(topping, index) in toppings" :key="topping.id"  @click="updateTopping(index)">{{topping.topping}}</button>
+           <p class="topping" v-for="(topping, index) in toppings" :key="topping.id"  @click="updateTopping(index)">{{topping.topping}} </p>
       </div>
 
     </div>
@@ -41,12 +41,18 @@ export default {
         topping:"Onions",
         image:require("./assets/onions.png")
       },
-       {
+      {
         id: 7003,
-        topping:"Pepperoni",
-        image:require("./assets/pepperoni1.png")
-      }, {
+        topping:"Tomatoes",
+        image:require("./assets/tomatoes.png")
+      },
+      {
         id: 7004,
+        topping:"Black Olives",
+        image:require("./assets/black-olives.png")
+      },
+       {
+        id: 7005,
         topping:"Ranch",
         image:require("./assets/ranch.png")
       }
@@ -64,9 +70,7 @@ export default {
       console.log(this.chosenTopping)
     }
   },
-  computed:{
 
-  }
   
 }
 </script>
@@ -89,12 +93,15 @@ export default {
 }
 #ingredients{
   display: flex;
-  /* width: 80vw; */
+  width: 50vw;
   justify-content: space-around;
 }
 
 .topping{
-  height: 2rem;
+  height: 4rem;
+  width: 7rem;
+  margin-top: 5px;
+  background-color: rgba(192, 192, 192, 0.602);
   cursor: pointer;
 }
 
@@ -103,10 +110,11 @@ export default {
   height: 20rem;
   top: 0;
   left: 0;
+  transform: translate(-7.75%, 2%);
 }
 .topping-img{
   position: absolute;
-  height: 20rem;
+  height: 21.5rem;
   top: 0;
   left: 0;
 }
