@@ -89,11 +89,12 @@ export default {
 #pizza-main{
   display: flex;
   flex-direction: row;
+  
 
 }
 #ingredients{
   display: flex;
-  width: 50vw;
+  width: 40%;
   justify-content: space-around;
 }
 
@@ -103,18 +104,23 @@ export default {
   margin-top: 5px;
   background-color: rgba(192, 192, 192, 0.602);
   cursor: pointer;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .crust-img{
   position: absolute;
-  height: 20rem;
+  height: 70%;
   top: 0;
   left: 0;
-  transform: translate(-7.75%, 2%);
+  /* transform: translate(-7.75%, 2%); */
+  transform: translateX(-11%);
 }
 .topping-img{
   position: absolute;
-  height: 21.5rem;
+  height: 70%;
   top: 0;
   left: 0;
 }
