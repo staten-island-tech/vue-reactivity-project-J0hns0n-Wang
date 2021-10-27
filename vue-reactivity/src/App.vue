@@ -5,11 +5,16 @@
       <div id="img-container">
         <img class="crust-img" src="./assets/crust.png">
         <img class="topping-img" v-for="topping in chosenTopping" :key="topping.id" :src="topping.image" >
-           <!-- <img :src="image">  -->
       </div>
-      <div id="ingredients">
-           <p class="topping" v-for="(topping, index) in toppings" :key="topping.id"  @click="updateTopping(index)">{{topping.topping}} </p>
+      <div id="right-container">
+        <div class="ingredients">
+          <p class="topping" v-for="(topping, index) in toppings" :key="topping.id"  @click="updateTopping(index)">{{topping.topping}} </p>
+        </div>
+            <div id="buttons-container">    
+        <img @click="deleteToppings()" class="garbage-img" src="./assets/trash.png">
       </div>
+      </div>
+      
 
     </div>
  
@@ -24,7 +29,7 @@ export default {
   name: 'App',
   data(){
     return{
-      chosenTopping:[],
+    chosenTopping:[],
     toppings:[
       {
         id: 7000,
@@ -68,6 +73,9 @@ export default {
       console.log(index)
       this.chosenTopping.push(this.toppings[index])
       console.log(this.chosenTopping)
+    },
+    deleteToppings(){
+      this.chosenTopping = []
     }
   },
 
@@ -92,12 +100,18 @@ export default {
   
 
 }
-#ingredients{
+#right-container{
   display: flex;
+  flex-direction: column;
   width: 40%;
   justify-content: space-around;
 }
-
+.ingredients{
+  display: flex;
+  flex-direction: row;
+  
+  justify-content: space-around;
+}
 .topping{
   height: 4rem;
   width: 7rem;
@@ -105,9 +119,7 @@ export default {
   background-color: rgba(192, 192, 192, 0.602);
   cursor: pointer;
   border-radius: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+
 }
 
 .crust-img{
@@ -125,5 +137,9 @@ export default {
   left: 0;
 }
 
+.garbage-img{
+  height: 5rem;
+  cursor: pointer;
+}
 
 </style>
