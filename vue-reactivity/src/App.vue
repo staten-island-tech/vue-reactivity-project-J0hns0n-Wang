@@ -7,15 +7,19 @@
         <img class="topping-img" v-for="topping in chosenTopping" :key="topping.id" :src="topping.image" >
       </div>
       <div id="right-container">
-        <div class="ingredients">
-          <p class="topping" v-for="(topping, index) in toppings" :key="topping.id"  @click="updateTopping(index)">{{topping.topping}} </p>
+        <div class="ingredients" v-for="(topping, index) in toppings" :key="topping.id"  @click="updateTopping(index)">
+          <div class="topping" >
+            <p class="topping-name">{{topping.topping}} </p>
+             <img class="menu-img" :src="topping.image">
+          </div>
+         
         </div>
-            <div id="buttons-container">    
+             <div id="buttons-container">    
         <img @click="deleteToppings()" class="garbage-img" src="./assets/trash.png">
-      </div>
+            </div>
       </div>
       
-
+     
     </div>
  
 
@@ -113,18 +117,17 @@ export default {
   justify-content: space-around;
 }
 .topping{
-  height: 4rem;
+  height: 6rem;
   width: 7rem;
   margin-top: 5px;
   background-color: rgba(192, 192, 192, 0.602);
   cursor: pointer;
   border-radius: 0.5rem;
-
 }
 
 .crust-img{
   position: absolute;
-  height: 70%;
+  height: 80%;
   top: 0;
   left: 0;
   /* transform: translate(-7.75%, 2%); */
@@ -132,7 +135,7 @@ export default {
 }
 .topping-img{
   position: absolute;
-  height: 70%;
+  height: 80%;
   top: 0;
   left: 0;
 }
@@ -140,6 +143,11 @@ export default {
 .garbage-img{
   height: 5rem;
   cursor: pointer;
+  background-color: red;
+  border-radius: 0.5rem;
 }
 
+.menu-img{
+  height: 3rem;
+}
 </style>
