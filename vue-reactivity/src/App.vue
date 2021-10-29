@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>Vegan Pizza Builder</h1>
+    <h1>Vegetarian Pizza Builder</h1>
     <div id="pizza-main">
       <div id="img-container">
         <img class="crust-img" src="./assets/crust.png">
